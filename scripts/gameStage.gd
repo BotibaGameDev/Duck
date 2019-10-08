@@ -1,7 +1,7 @@
 extends Node
 onready var menu = preload("res://scenes/Menu.tscn")
 onready var scn_spawnerKnife = preload("res://scenes/Levels/Knife/spawnerKnife.tscn")
-
+#github
 onready var money = game.save["money"]
 
 
