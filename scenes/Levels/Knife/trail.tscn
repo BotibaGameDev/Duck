@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/knife scripts/trail.gd" type="Script" id=1]
+
+[node name="trail" type="Line2D"]
+default_color = Color( 0.823529, 0.215686, 0.152941, 1 )
+script = ExtResource( 1 )

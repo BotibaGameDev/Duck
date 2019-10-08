@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/knife throw.ogg-390efe383a971c6a4d146f59ca74174d.oggstr"
+
+[deps]
+
+source_file="res://sounds/knife throw.ogg"
+dest_files=[ "res://.import/knife throw.ogg-390efe383a971c6a4d146f59ca74174d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

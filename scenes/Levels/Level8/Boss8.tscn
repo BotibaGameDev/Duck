@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Level8/Boss8.gd" type="Script" id=1]
+[ext_resource path="res://sprites/49.png" type="Texture" id=2]
+[ext_resource path="res://scenes/screenShake.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/bossCollision.gd" type="Script" id=4]
+[ext_resource path="res://scenes/trans.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/bar.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.49459
+
+[node name="Boss" type="RigidBody2D"]
+position = Vector2( 41.8278, 31.3304 )
+gravity_scale = 0.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.852707, 1.89075 )
+scale = Vector2( 0.250898, 0.250898 )
+texture = ExtResource( 2 )
+
+[node name="screenShake" parent="Sprite" instance=ExtResource( 3 )]
+
+[node name="boss" type="Area2D" parent="."]
+position = Vector2( 3.8147e-006, 0 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss"]
+position = Vector2( 0.240993, 4.11519 )
+shape = SubResource( 1 )
+
+[node name="trans" parent="." instance=ExtResource( 5 )]
+
+[node name="bar" parent="." instance=ExtResource( 6 )]
+[connection signal="area_entered" from="boss" to="boss" method="_on_boss_area_entered"]

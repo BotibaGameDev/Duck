@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Level3/Level3.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "nextLevel"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -30, 0 ) ]
+}
+
+[node name="spawner" type="Node2D"]
+script = ExtResource( 1 )
+fruitHitMax = 6
+duckSpeedRandMin = 90
+duckSpeedRandMax = 120
+bossHealth = 5
+maxDucks = 4
+
+[node name="fruitContainer" type="Node" parent="."]
+
+[node name="duckContainer" type="Node" parent="."]
+
+[node name="halfFruitContainer" type="Node" parent="."]
+
+[node name="Sprite" type="Node2D" parent="."]
+position = Vector2( -1.5, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/nextLevel = SubResource( 1 )

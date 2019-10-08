@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.690196, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.380392, 0.0196078, 0.0196078, 1 )
+
+[node name="bar" type="ProgressBar"]
+margin_left = -9.17
+margin_top = -13.0
+margin_right = 9.83
+margin_bottom = -10.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+max_value = 10.0
+step = 1.0
+value = 5.0
+allow_greater = true
+allow_lesser = true
+percent_visible = false

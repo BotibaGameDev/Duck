@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/apple slash.wav-9a489847c6a50413f839894a6c040e54.sample"
+
+[deps]
+
+source_file="res://sounds/apple slash.wav"
+dest_files=[ "res://.import/apple slash.wav-9a489847c6a50413f839894a6c040e54.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

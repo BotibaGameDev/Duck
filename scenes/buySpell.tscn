@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/Store.gd" type="Script" id=1]
+[ext_resource path="res://fonts/moon_get-Heavy.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://sprites/priceBtn.png" type="Texture" id=3]
+[ext_resource path="res://sprites/SlowwButton.png" type="Texture" id=4]
+[ext_resource path="res://sprites/feuille1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Lazer.png" type="Texture" id=6]
+[ext_resource path="res://sprites/imuneButton.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 5
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 7
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 5
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 5
+font_data = ExtResource( 2 )
+
+[node name="buySpell" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="buySlow" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 52.6
+margin_top = 155.744
+margin_right = 635.6
+margin_bottom = 357.744
+rect_scale = Vector2( 0.06, 0.07 )
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "Buy"
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="buySlow"]
+light_mask = 0
+margin_left = 55.186
+margin_top = -611.0
+margin_right = 66.186
+margin_bottom = -597.0
+rect_scale = Vector2( 15, 15 )
+custom_fonts/font = SubResource( 2 )
+text = "50"
+
+[node name="icon" type="Sprite" parent="buySlow"]
+position = Vector2( 271.329, -350 )
+scale = Vector2( 3.4, 3.4 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="back" type="Sprite" parent="buySlow"]
+position = Vector2( 280.783, -254.229 )
+scale = Vector2( 1.8, 1.5 )
+z_index = -2
+texture = ExtResource( 5 )
+
+[node name="buyLazer" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 95.4191
+margin_top = 155.975
+margin_right = 678.419
+margin_bottom = 357.975
+rect_scale = Vector2( 0.06, 0.07 )
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
+enabled_focus_mode = 0
+text = "Buy"
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="buyLazer"]
+light_mask = 0
+margin_left = 15.156
+margin_top = -611.0
+margin_right = 26.156
+margin_bottom = -597.0
+rect_scale = Vector2( 15, 15 )
+custom_fonts/font = SubResource( 2 )
+text = "50"
+
+[node name="icon" type="Sprite" parent="buyLazer"]
+position = Vector2( 262.562, -350.093 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="back" type="Sprite" parent="buyLazer"]
+position = Vector2( 277.969, -251.22 )
+scale = Vector2( 1.8, 1.5 )
+z_index = -2
+texture = ExtResource( 5 )
+
+[node name="buyImune" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 11.1673
+margin_top = 155.609
+margin_right = 594.167
+margin_bottom = 357.609
+rect_scale = Vector2( 0.06, 0.07 )
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Buy"
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="buyImune"]
+light_mask = 0
+margin_left = 86.834
+margin_top = -611.0
+margin_right = 97.834
+margin_bottom = -597.0
+rect_scale = Vector2( 15, 15 )
+custom_fonts/font = SubResource( 2 )
+text = "50"
+
+[node name="icon" type="Sprite" parent="buyImune"]
+position = Vector2( 267.138, -350 )
+scale = Vector2( 3.4, 3.4 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="back" type="Sprite" parent="buyImune"]
+position = Vector2( 286.262, -249.58 )
+scale = Vector2( 1.8, 1.5 )
+z_index = -2
+texture = ExtResource( 5 )
+
+[connection signal="pressed" from="buySlow" to="." method="_on_buySlow_pressed"]
+[connection signal="pressed" from="buyLazer" to="." method="_on_buyLazer_pressed"]
+[connection signal="pressed" from="buyImune" to="." method="_on_buyImune_pressed"]

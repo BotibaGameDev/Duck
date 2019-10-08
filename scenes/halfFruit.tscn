@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/halfApple.gd" type="Script" id=1]
+[ext_resource path="res://sprites/39.png" type="Texture" id=2]
+
+[node name="halfApple" type="RigidBody2D"]
+position = Vector2( 72.3813, 37.9874 )
+rotation = 0.436332
+gravity_scale = 5.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.761824, -0.761824 )
+scale = Vector2( 0.214097, 0.214097 )
+texture = ExtResource( 2 )

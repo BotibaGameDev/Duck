@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/feuille1.png" type="Texture" id=1]
+
+[node name="buyKnives" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 52.0883
+margin_top = 105.904
+margin_right = 576.088
+margin_bottom = 646.904
+rect_scale = Vector2( 0.05, 0.05 )
+icon = ExtResource( 1 )
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 9.45784
+margin_top = 106.196
+margin_right = 533.458
+margin_bottom = 647.195
+rect_scale = Vector2( 0.05, 0.05 )
+icon = ExtResource( 1 )
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 8.58188
+margin_top = 139.184
+margin_right = 532.582
+margin_bottom = 680.184
+rect_scale = Vector2( 0.05, 0.05 )
+icon = ExtResource( 1 )
+flat = true
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 29.5599
+margin_top = 106.195
+margin_right = 553.56
+margin_bottom = 647.195
+rect_scale = Vector2( 0.05, 0.05 )
+icon = ExtResource( 1 )
+flat = true
+
