@@ -23,5 +23,4 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fruit"]
 position = Vector2( 2.28882e-005, 1.63126 )
 shape = SubResource( 1 )
-
 [connection signal="area_entered" from="fruit" to="fruit" method="_on_fruit_area_entered"]

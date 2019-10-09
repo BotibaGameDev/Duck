@@ -28,8 +28,11 @@ func _on_Area2D_area_entered(area):
 			get_node("/root/Main/Menu/High score").set_text("Best: "+str(game.save["hs"]))
 		#_______________________________________________________________________________________________
 	if area.get_name() == "movingKnife" and get_node("/root/Main").imuneBonus == true:
-		get_parent().get_child(3).get_child(0).play("imune")
+		get_parent().get_child(3).get_child(0).play("imuneused")
+		for i in range(get_node("/root/Main").ducksInField) :
+				get_node("/root/Main/background").get_child(1).get_child(1).get_child(i).get_child(3).get_child(0).play("imuneused")
 		get_node("/root/Main").imuneBonus = false
+		
 		pass
 	pass # Replace with function body.
 

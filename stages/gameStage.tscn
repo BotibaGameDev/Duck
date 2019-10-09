@@ -215,7 +215,7 @@ modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 editor/display_folded = true
 scale = Vector2( 0.199901, 0.199901 )
 z_index = -4
-frame = 38
+frame = 8
 
 [node name="Fading" type="AnimationPlayer" parent="background/Swamp"]
 anims/Fade = SubResource( 1 )

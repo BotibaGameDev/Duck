@@ -7,6 +7,7 @@ var gameOn = true
 onready var verro = true
 export var duckSpeedRandMin = 60
 export var duckSpeedRandMax = 160
+var imuneOn = false
 
 func init(vel, dir):
 	direction = dir
@@ -26,6 +27,9 @@ func _ready():
 	pass 
 
 func _process(delta):
+	if get_node("/root/Main").imuneBonus == true and imuneOn == false:
+		get_child(3).get_child(0).play("imuneActivated")
+		imuneOn = true
 	if (position.x < -40 or position.x > 180) and verro:
 		get_node("/root/Main").ducksInField -= 1
 		verro = false
