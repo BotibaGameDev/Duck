@@ -1,5 +1,5 @@
 extends Area2D
-
+onready var imuneActivated_scn = preload("res://scenes/imune activated.tscn")
 
 
 func _ready():
@@ -7,11 +7,14 @@ func _ready():
 	
 func _on_fruit_area_entered(area):
 	if area.get_name() == "movingKnife":
-		#randomize()
-		#if rand_range(-1,1) > 0 :
-			#get_node("/root/Main").imuneBonus = true
-			#for i in range(get_node("/root/Main").ducksInField) :
-				#get_node("/root/Main/background").get_child(1).get_child(1).get_child(i).imuneOn = false
+		randomize()
+		if rand_range(-1,1) > 0 :
+			get_node("/root/Main").imuneBonus = true
+			get_node("/root/Main").add_child(imuneActivated_scn.instance())
+			get_node("/root/Main/imune activated/animation").play("On")
+			get_node("/root/Main/background/Swamp/Fading").play("fade for bonus")
+			for i in range(get_node("/root/Main").ducksInField) :
+				get_node("/root/Main/background").get_child(1).get_child(1).get_child(i).imuneOn = false
 		
 		get_node("/root/Main").lazerBonus = false
 		get_node("/root/Main/sounds").get_child(2).play()

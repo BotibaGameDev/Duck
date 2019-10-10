@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/gameStage.gd" type="Script" id=1]
 [ext_resource path="res://scenes/background.tscn" type="PackedScene" id=2]
@@ -46,6 +46,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.380392, 0.380392, 0.380392, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "fade for bonus"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.380392, 0.380392, 0.380392, 1 ), Color( 0.380392, 0.380392, 0.380392, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="DynamicFont" id=3]
@@ -212,17 +228,16 @@ script = ExtResource( 1 )
 modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 
 [node name="Swamp" parent="background" instance=ExtResource( 2 )]
-editor/display_folded = true
 scale = Vector2( 0.199901, 0.199901 )
 z_index = -4
-frame = 131
+frame = 56
 
 [node name="Fading" type="AnimationPlayer" parent="background/Swamp"]
 anims/Fade = SubResource( 1 )
 anims/Unfade = SubResource( 2 )
+"anims/fade for bonus" = SubResource( 17 )
 
 [node name="ui_container" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="score" type="Label" parent="ui_container"]
 margin_left = 119.0
@@ -319,6 +334,7 @@ custom_fonts/font = SubResource( 12 )
 text = "50"
 
 [node name="imuneDuck" type="Button" parent="Buttons"]
+editor/display_folded = true
 margin_left = 54.0
 margin_top = 260.0
 margin_right = 169.0

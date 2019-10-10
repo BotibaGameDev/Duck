@@ -193,6 +193,6 @@ animations = [ {
 scale = Vector2( 0.200589, 0.200589 )
 z_index = -2
 frames = SubResource( 1 )
-frame = 151
+frame = 146
 playing = true
 centered = false
