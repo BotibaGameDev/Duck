@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [ Color( 0.380392, 0.380392, 0.380392, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=3]
 resource_name = "fade for bonus"
 length = 1.5
 tracks/0/type = "value"
@@ -64,17 +64,17 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.380392, 0.380392, 0.380392, 1 ), Color( 0.380392, 0.380392, 0.380392, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 15
 outline_size = 1
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 12
 outline_size = 1
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -89,7 +89,7 @@ tracks/0/keys = {
 "values": [ Vector2( 11, 260 ), Vector2( 5, 230 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -104,7 +104,7 @@ tracks/0/keys = {
 "values": [ Vector2( 11, 234 ), Vector2( 11, 260 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_scale")
@@ -119,11 +119,11 @@ tracks/0/keys = {
 "values": [ Vector2( 0.19, 0.19 ), Vector2( 0.18, 0.18 ), Vector2( 0.19, 0.19 ) ]
 }
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 40
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -138,7 +138,7 @@ tracks/0/keys = {
 "values": [ Vector2( 33, 260 ), Vector2( 30, 230 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -153,7 +153,7 @@ tracks/0/keys = {
 "values": [ Vector2( 33, 234 ), Vector2( 33, 260 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_scale")
@@ -168,11 +168,11 @@ tracks/0/keys = {
 "values": [ Vector2( 0.044, 0.044 ), Vector2( 0.042, 0.042 ), Vector2( 0.044, 0.044 ) ]
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 size = 180
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -187,7 +187,7 @@ tracks/0/keys = {
 "values": [ Vector2( 54, 260 ), Vector2( 54, 230 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -202,7 +202,7 @@ tracks/0/keys = {
 "values": [ Vector2( 54, 232 ), Vector2( 54, 260 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_scale")
@@ -217,7 +217,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.2, 0.2 ), Vector2( 0.19, 0.19 ), Vector2( 0.2, 0.2 ) ]
 }
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=17]
 size = 40
 font_data = ExtResource( 7 )
 
@@ -230,12 +230,12 @@ modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 [node name="Swamp" parent="background" instance=ExtResource( 2 )]
 scale = Vector2( 0.199901, 0.199901 )
 z_index = -4
-frame = 56
+frame = 115
 
 [node name="Fading" type="AnimationPlayer" parent="background/Swamp"]
 anims/Fade = SubResource( 1 )
 anims/Unfade = SubResource( 2 )
-"anims/fade for bonus" = SubResource( 17 )
+"anims/fade for bonus" = SubResource( 3 )
 
 [node name="ui_container" type="Node" parent="."]
 
@@ -245,7 +245,7 @@ margin_top = 2.0
 margin_right = 139.0
 margin_bottom = 17.0
 size_flags_stretch_ratio = 0.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -260,7 +260,7 @@ margin_top = 5.0
 margin_right = 23.0
 margin_bottom = 16.0
 size_flags_stretch_ratio = 0.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -290,9 +290,9 @@ flat = true
 script = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/slowDucks"]
-anims/come = SubResource( 5 )
-anims/goAway = SubResource( 6 )
-anims/pressed = SubResource( 7 )
+anims/come = SubResource( 6 )
+anims/goAway = SubResource( 7 )
+anims/pressed = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="Buttons/slowDucks"]
 wait_time = 3.0
@@ -303,7 +303,7 @@ margin_left = -6.72406
 margin_top = -13.4481
 margin_right = 72.2759
 margin_bottom = 74.5519
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "50"
 
 [node name="addLazer" type="Button" parent="Buttons"]
@@ -321,16 +321,16 @@ flat = true
 script = ExtResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/addLazer"]
-anims/come = SubResource( 9 )
-anims/goAway = SubResource( 10 )
-anims/pressed = SubResource( 11 )
+anims/come = SubResource( 10 )
+anims/goAway = SubResource( 11 )
+anims/pressed = SubResource( 12 )
 
 [node name="Label" type="Label" parent="Buttons/addLazer"]
 margin_left = -26.0059
 margin_top = -100.03
 margin_right = 259.994
 margin_bottom = 215.97
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 text = "50"
 
 [node name="imuneDuck" type="Button" parent="Buttons"]
@@ -348,16 +348,16 @@ flat = true
 script = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/imuneDuck"]
-anims/come = SubResource( 13 )
-anims/goAway = SubResource( 14 )
-anims/pressed = SubResource( 15 )
+anims/come = SubResource( 14 )
+anims/goAway = SubResource( 15 )
+anims/pressed = SubResource( 16 )
 
 [node name="Label" type="Label" parent="Buttons/imuneDuck"]
 margin_left = -4.91321
 margin_top = -19.2177
 margin_right = 59.0868
 margin_bottom = 50.7823
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 text = "50"
 
 [node name="sounds" type="Node" parent="."]

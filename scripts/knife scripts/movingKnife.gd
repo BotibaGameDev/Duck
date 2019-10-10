@@ -4,6 +4,14 @@ var pos = 1
 var knifeSpeed = -500
 
 func _ready():
+	if get_node("/root/Main").gunOn == true :
+		get_node("/root/Main/gun activated").get_child(get_node("/root/Main").bullets).queue_free()
+		get_node("/root/Main").bullets -=1
+		knifeSpeed = -2000
+		if get_node("/root/Main").bullets == 0 :
+			get_node("/root/Main").gunOn = false
+			get_node("/root/Main").bonusOn = false
+			get_node("/root/Main/gun activated").queue_free()
 	get_node("/root/Main/sounds").get_child(0).play()
 	set_linear_velocity(Vector2(get_linear_velocity().x,knifeSpeed))
 	pass 

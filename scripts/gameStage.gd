@@ -12,9 +12,12 @@ var gameOn = false #true means the game can start, false means the game already 
 var soundOn = true
 var storeOpen = false
 # Bonus variables-----------------------------------------------------
+var bonusOn = false
 var slowBonus = false
 var lazerBonus = false
 var imuneBonus = false
+var gunOn = false
+var bullets = 0
 #---------------------------------------------------------------------
 func instMenu():
 	add_child(menu.instance())

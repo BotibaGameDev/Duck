@@ -1,6 +1,7 @@
 extends Area2D
 onready var imuneActivated_scn = preload("res://scenes/imune activated.tscn")
-
+onready var gunActivated_scn = preload("res://scenes/gun activated.tscn")
+var proc
 
 func _ready():
 	pass 
@@ -8,13 +9,24 @@ func _ready():
 func _on_fruit_area_entered(area):
 	if area.get_name() == "movingKnife":
 		randomize()
-		if rand_range(-1,1) > 0 :
+		proc = randi()%3+1
+		print(proc)
+		if proc == 1 and get_node("/root/Main").bonusOn == false :
 			get_node("/root/Main").imuneBonus = true
+			get_node("/root/Main").bonusOn = true
 			get_node("/root/Main").add_child(imuneActivated_scn.instance())
 			get_node("/root/Main/imune activated/animation").play("On")
 			get_node("/root/Main/background/Swamp/Fading").play("fade for bonus")
 			for i in range(get_node("/root/Main").ducksInField) :
 				get_node("/root/Main/background").get_child(1).get_child(1).get_child(i).imuneOn = false
+		if proc == 2 and get_node("/root/Main").bonusOn == false :
+			get_node("/root/Main").bullets = 4
+			get_node("/root/Main").gunOn = true
+			get_node("/root/Main").bonusOn = true
+			get_node("/root/Main/background/Swamp/Fading").play("fade for bonus")
+			get_node("/root/Main").add_child(gunActivated_scn.instance())
+			get_node("/root/Main/gun activated/GUN/animation").play("gun activated")
+			
 		
 		get_node("/root/Main").lazerBonus = false
 		get_node("/root/Main/sounds").get_child(2).play()

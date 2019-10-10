@@ -32,6 +32,8 @@ func _on_Area2D_area_entered(area):
 		for i in range(get_node("/root/Main").ducksInField) :
 				get_node("/root/Main/background").get_child(1).get_child(1).get_child(i).get_child(3).get_child(0).play("imuneused")
 		get_node("/root/Main").imuneBonus = false
+		get_node("/root/Main").bonusOn = false
+		get_node("/root/Main/imune activated").queue_free()
 		
 		pass
 	pass # Replace with function body.
