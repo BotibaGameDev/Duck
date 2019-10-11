@@ -55,4 +55,5 @@ func _on_slowDucks_pressed():
 func _on_Timer_timeout():
 	get_node("/root/Main").slowBonus = false
 	desactivate()
+	get_node("/root/Main").bonusOn = false
 	pass 

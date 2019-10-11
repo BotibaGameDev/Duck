@@ -228,9 +228,10 @@ script = ExtResource( 1 )
 modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 
 [node name="Swamp" parent="background" instance=ExtResource( 2 )]
+editor/display_folded = true
 scale = Vector2( 0.199901, 0.199901 )
 z_index = -4
-frame = 115
+frame = 18
 
 [node name="Fading" type="AnimationPlayer" parent="background/Swamp"]
 anims/Fade = SubResource( 1 )
@@ -276,7 +277,6 @@ texture = ExtResource( 4 )
 z_index = 2
 
 [node name="slowDucks" type="Button" parent="Buttons"]
-editor/display_folded = true
 margin_left = 11.0
 margin_top = 260.0
 margin_right = 126.0
@@ -295,7 +295,7 @@ anims/goAway = SubResource( 7 )
 anims/pressed = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="Buttons/slowDucks"]
-wait_time = 3.0
+wait_time = 6.0
 one_shot = true
 
 [node name="Label" type="Label" parent="Buttons/slowDucks"]

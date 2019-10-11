@@ -25,9 +25,9 @@ duckSpeedRandMin = 80
 duckSpeedRandMax = 100
 bossHealth = 5
 
-[node name="fruitContainer" type="Node" parent="."]
+[node name="fruitContainer" type="Node2D" parent="."]
 
-[node name="duckContainer" type="Node" parent="."]
+[node name="duckContainer" type="Node2D" parent="."]
 
 [node name="halfFruitContainer" type="Node" parent="."]
 
@@ -36,4 +36,3 @@ position = Vector2( -22.5, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node"]
 anims/nextLevel = SubResource( 1 )
-

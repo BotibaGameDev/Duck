@@ -1,6 +1,7 @@
 extends Area2D
 onready var imuneActivated_scn = preload("res://scenes/imune activated.tscn")
 onready var gunActivated_scn = preload("res://scenes/gun activated.tscn")
+onready var slowActivated_scn = preload("res://scenes/slow activated.tscn")
 var proc
 
 func _ready():
@@ -26,7 +27,13 @@ func _on_fruit_area_entered(area):
 			get_node("/root/Main/background/Swamp/Fading").play("fade for bonus")
 			get_node("/root/Main").add_child(gunActivated_scn.instance())
 			get_node("/root/Main/gun activated/GUN/animation").play("gun activated")
-			
+		if proc == 3 and get_node("/root/Main").bonusOn == false and get_node("/root/Main").slowBonus == false:
+			get_node("/root/Main").bonusOn = true
+			get_node("/root/Main").slowBonus = true
+			get_node("/root/Main/Buttons/slowDucks").activate()
+			get_node("/root/Main/background/Swamp/Fading").play("fade for bonus")
+			get_node("/root/Main").add_child(slowActivated_scn.instance())
+			get_node("/root/Main/slow activated/icon/animation").play("slow activated")
 		
 		get_node("/root/Main").lazerBonus = false
 		get_node("/root/Main/sounds").get_child(2).play()

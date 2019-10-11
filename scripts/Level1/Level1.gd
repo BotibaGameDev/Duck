@@ -68,6 +68,8 @@ func spawnDuck():
 	duckcount +=1
 	randomize()
 	var duckSpeed = rand_range(duckSpeedRandMin,duckSpeedRandMax)
+	if get_node("/root/Main").slowBonus == true :
+		duckSpeed -= 50
 	var newDuck = scnDuck.instance()
 	if duckContainer.get_child_count() == 0:
 		newDuck.position.y = 60
