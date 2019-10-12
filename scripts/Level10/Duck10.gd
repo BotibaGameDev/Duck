@@ -4,10 +4,10 @@ signal duckSignal
 var velocity
 var direction 
 var gameOn = true
-var verro = true
+onready var verro = true
 export var duckSpeedRandMin = 60
 export var duckSpeedRandMax = 160
-var boool
+var imuneOn = false
 
 func init(vel, dir):
 	direction = dir
@@ -27,18 +27,23 @@ func _ready():
 	pass 
 
 func _process(delta):
+	if get_node("/root/Main").imuneBonus == true and imuneOn == false:
+		get_child(3).get_child(0).play("imuneActivated")
+		imuneOn = true
 	if (position.x < -40 or position.x > 180) and verro:
 		get_node("/root/Main").ducksInField -= 1
 		verro = false
 	if position.x <= -30 and direction == "left" and gameOn:
 		randomize()
-		boool = randi()%3+1
-		if boool == 1:
-			velocity = 60
-		if boool == 2 or boool == 3:
-			velocity = 220	
+		velocity = rand_range(duckSpeedRandMin,duckSpeedRandMax)
 		set_linear_velocity(Vector2(velocity, get_linear_velocity().y))
 		direction="right"
+		changeSpriteDirection()
+		randomize()
+	if position.x >= 160 and direction == "right" and gameOn:
+		velocity = rand_range(-1*duckSpeedRandMin,-1*duckSpeedRandMax)
+		set_linear_velocity(Vector2(velocity, get_linear_velocity().y))
+		direction="left"
 		changeSpriteDirection()
 	pass
 	

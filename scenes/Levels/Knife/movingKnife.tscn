@@ -1,22 +1,55 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scripts/knife scripts/movingKnife.gd" type="Script" id=1]
-[ext_resource path="res://sprites/Knife.png" type="Texture" id=2]
-[ext_resource path="res://scripts/knife scripts/movingKnifeCollision.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Levels/Knife/trail.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00000.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00001.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00002.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00003.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00004.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00005.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00006.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00007.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00008.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00009.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00010.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00011.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00012.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00013.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00014.png" type="Texture" id=16]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00015.png" type="Texture" id=17]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00016.png" type="Texture" id=18]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00017.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00018.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00019.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00020.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00021.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00022.png" type="Texture" id=24]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00023.png" type="Texture" id=25]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00024.png" type="Texture" id=26]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00025.png" type="Texture" id=27]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00026.png" type="Texture" id=28]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00027.png" type="Texture" id=29]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00028.png" type="Texture" id=30]
+[ext_resource path="res://sprites/Knife/sword/throw knife/knife_00029.png" type="Texture" id=31]
+[ext_resource path="res://scripts/knife scripts/movingKnifeCollision.gd" type="Script" id=32]
 
 [sub_resource type="PhysicsMaterial" id=1]
 rough = true
 bounce = 50.0
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 1.92187
 height = 21.0728
 
-[sub_resource type="Gradient" id=3]
-colors = PoolColorArray( 0.441101, 0.768063, 0.855469, 0.0352941, 1, 1, 1, 0.298039 )
-
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 2.24228
 height = 16.5588
 
@@ -25,30 +58,26 @@ position = Vector2( -2.33342, -3.39731 )
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="."]
-rotation = -0.785398
-scale = Vector2( 0.08, 0.08 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.122414, 1.12447 )
+scale = Vector2( 0.06, 0.06 )
 z_index = -1
-texture = ExtResource( 2 )
+frames = SubResource( 2 )
+frame = 26
+playing = true
 
 [node name="movingKnife" type="Area2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 32 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="movingKnife"]
 position = Vector2( 0.166079, 1.92375 )
-shape = SubResource( 2 )
-
-[node name="trail" parent="." instance=ExtResource( 4 )]
-z_index = -1
-width = 5.0
-default_color = Color( 0.92549, 0.113725, 0.0509804, 1 )
-gradient = SubResource( 3 )
-texture_mode = 1634036835
-targetPath = NodePath("..")
-trailLenght = 8
+shape = SubResource( 3 )
 
 [node name="knife" type="CollisionShape2D" parent="."]
 position = Vector2( 0.250343, 1.51588 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 [connection signal="area_entered" from="movingKnife" to="movingKnife" method="_on_Area2D_area_entered"]

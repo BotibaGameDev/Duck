@@ -1,0 +1,78 @@
+extends RigidBody2D
+
+#Duck 12: 
+
+signal duckSignal
+var randops
+var velocity
+var direction 
+var gameOn = true
+onready var verro = true
+export var duckSpeedRandMin = 60
+export var duckSpeedRandMax = 160
+var imuneOn = false
+
+func init(vel, dir):
+	direction = dir
+	velocity = vel
+	pass
+	
+
+func emitSignal():
+	emit_signal("duckSignal")
+	pass
+	
+func _ready():
+	get_node("Timer").start()
+	get_node("/root/Main").ducksInField += 1
+	set_linear_velocity(Vector2(velocity, get_linear_velocity().y))
+	if direction == "right":
+		changeSpriteDirection()
+	pass 
+
+func _process(delta):
+	if get_node("/root/Main").imuneBonus == true and imuneOn == false:
+		get_child(3).get_child(0).play("imuneActivated")
+		imuneOn = true
+	if (position.x < -40 or position.x > 180) and verro:
+		get_node("/root/Main").ducksInField -= 1
+		verro = false
+	if position.x <= -30 and direction == "left" and gameOn:
+		randomize()
+		velocity = rand_range(duckSpeedRandMin,duckSpeedRandMax)
+		set_linear_velocity(Vector2(velocity, get_linear_velocity().y))
+		direction="right"
+		changeSpriteDirection()
+	if position.x >= 160 and direction == "right" and gameOn:
+		velocity = rand_range(-1*duckSpeedRandMin,-1*duckSpeedRandMax)
+		set_linear_velocity(Vector2(velocity, get_linear_velocity().y))
+		direction="left"
+		changeSpriteDirection()
+	pass
+	
+func changeSpriteDirection():
+	var s= get_child(0).get_scale().x * -1
+	var z= get_child(0).get_scale().y 
+	get_child(0).set_scale(Vector2(s,z))
+	pass
+
+func changeDirection():
+	if direction == "left" and gameOn:
+		randomize()
+		velocity = rand_range(duckSpeedRandMin,duckSpeedRandMax)
+		set_linear_velocity(Vector2(velocity, get_linear_velocity().y))
+		direction="right"
+		changeSpriteDirection()
+	if direction == "right" and gameOn:
+		velocity = rand_range(-1*duckSpeedRandMin,-1*duckSpeedRandMax)
+		set_linear_velocity(Vector2(velocity, get_linear_velocity().y))
+		direction="left"
+		changeSpriteDirection()
+		
+func _on_Timer_timeout():
+	print("time out")
+	randomize()
+	randops = rand_range(1,100)
+	if randops > 50:
+		changeDirection()
+	pass 

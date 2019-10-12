@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Level11/Boss11.gd" type="Script" id=1]
+[ext_resource path="res://sprites/49.png" type="Texture" id=2]
+[ext_resource path="res://scenes/screenShake.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/bossCollision.gd" type="Script" id=4]
+[ext_resource path="res://scenes/bar.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 9.31313
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 0.287175, 0.267943 ),
+"update": 0,
+"values": [ Color( 0.960784, 1, 0.596078, 0.639216 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Boss" type="RigidBody2D"]
+position = Vector2( 40.9793, 32.798 )
+gravity_scale = 0.0
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.166824, -1.98348 )
+scale = Vector2( 0.266378, 0.266378 )
+texture = ExtResource( 2 )
+
+[node name="screenShake" parent="Sprite" instance=ExtResource( 3 )]
+
+[node name="boss" type="Area2D" parent="."]
+position = Vector2( 3.8147e-006, 0 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss"]
+position = Vector2( -0.183846, 0.283878 )
+shape = SubResource( 1 )
+
+[node name="trans" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 2 )
+
+[node name="bar" parent="." instance=ExtResource( 5 )]
+visible = false
+[connection signal="area_entered" from="boss" to="boss" method="_on_boss_area_entered"]

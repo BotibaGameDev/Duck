@@ -133,7 +133,7 @@ func resumeSound():
 	get_node("sounds/background").play()
 
 # Levels --------------------------------------------------------
-onready var one = preload("res://scenes/Levels/Level1/Level1.tscn")
+onready var one = preload("res://scenes/Levels/Level12/Level12.tscn")
 onready var two = preload("res://scenes/Levels/Level2/Level2.tscn")
 onready var three = preload("res://scenes/Levels/Level3/Level3.tscn")
 onready var four = preload("res://scenes/Levels/Level4/Level4.tscn")

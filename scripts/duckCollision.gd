@@ -36,7 +36,7 @@ func _on_Area2D_area_entered(area):
 		get_node("/root/Main/imune activated").queue_free()
 		
 		pass
-	pass # Replace with function body.
+	pass 
 
 func dyingDuck():
 	get_node("/root/Main").ducksInField -=1
