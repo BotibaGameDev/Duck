@@ -35,10 +35,10 @@ func spawnMovingKnife():
 		
 func get_input():
 	var n = container.get_child_count()
-	if Input.is_action_just_pressed('mouseLeft') and get_global_mouse_position().y>=150 and get_global_mouse_position().y <=230:
+	if Input.is_action_just_pressed('mouseLeft') and get_global_mouse_position().y>=150 and get_global_mouse_position().y <=230 and get_node("/root/Main").canshoot==true:
 		spawnKnife()
 		knifeSpawned = true
 	#if n < 1:
-	if Input.is_action_just_released('mouseLeft')and knifeSpawned and get_global_mouse_position().y>=150:
+	if Input.is_action_just_released('mouseLeft')and knifeSpawned and get_global_mouse_position().y>=150 and get_node("/root/Main").canshoot==true:
 		spawnMovingKnife()
 		knifeSpawned=false

@@ -355,7 +355,6 @@ texture = ExtResource( 10 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
-
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="store" to="." method="_on_store_pressed"]
 [connection signal="button_down" from="toggleMute" to="toggleMute" method="_on_toggleMute_button_down"]

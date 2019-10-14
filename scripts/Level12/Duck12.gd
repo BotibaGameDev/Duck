@@ -70,7 +70,6 @@ func changeDirection():
 		changeSpriteDirection()
 		
 func _on_Timer_timeout():
-	print("time out")
 	randomize()
 	randops = rand_range(1,100)
 	if randops > 50:

@@ -12,6 +12,7 @@ var gameOn = false #true means the game can start, false means the game already 
 var soundOn = true
 var storeOpen = false
 # Bonus variables-----------------------------------------------------
+var canshoot = true
 var bonusOn = false
 var slowBonus = false
 var lazerBonus = false
@@ -131,7 +132,10 @@ func resumeSound():
 	get_node("Menu/toggleMute/Sprite").set_modulate("00ffffff")
 	print("sound resumed")
 	get_node("sounds/background").play()
-
+func pause_shooting():
+	canshoot=false
+	get_node("pause shooting").start()
+	pass
 # Levels --------------------------------------------------------
 onready var one = preload("res://scenes/Levels/Level12/Level12.tscn")
 onready var two = preload("res://scenes/Levels/Level2/Level2.tscn")
@@ -145,6 +149,10 @@ onready var nine = preload("res://scenes/Levels/Level9/Level9.tscn")
 onready var ten = preload("res://scenes/Levels/Level10/Level10.tscn")
 
 func _on_betweenLvls_timeout():
-	print("time out")
-	gameOn= true
+	gameOn = true
+	pass 
+
+
+func _on_pause_shooting_timeout():
+	canshoot = true
 	pass 

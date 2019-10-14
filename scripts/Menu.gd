@@ -1,5 +1,6 @@
 extends Node2D
 onready var scn_store = preload("res://scenes/Store.tscn")
+var storeOpen=false
 var done = false
 func _ready():
 	get_child(0).play("come")
@@ -16,18 +17,17 @@ func _process(delta):
 
 
 func _on_Start_pressed():
-	$"/root/Main".Level = 1
-	$"/root/Main".score = 0
-	get_child(0).play("go")
-	get_node("/root/Main/Buttons/imuneDuck").get_child(0).play("come")
-	get_node("/root/Main/Buttons/addLazer").get_child(0).play("come")
-	get_node("/root/Main/Buttons/slowDucks").get_child(0).play("come")
-	get_node("/root/Main/background/Swamp/Fading").play("Unfade")
-	$"/root/Main/Menu/Start".gameOn= false
+	if storeOpen == false :
+		$"/root/Main".Level = 1
+		$"/root/Main".score = 0
+		get_child(0).play("go")
+		get_node("/root/Main/background/Swamp/Fading").play("Unfade")
+		$"/root/Main/Menu/Start".gameOn= false
 	pass 
 
 
 func _on_store_pressed():
+	storeOpen=true
 	get_child(0).play("moveOut")
 	$"/root/Main".add_child(scn_store.instance())
 	pass 

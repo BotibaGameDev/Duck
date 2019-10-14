@@ -13,6 +13,7 @@ func _on_fruit_area_entered(area):
 		proc = randi()%3+1
 		print(proc)
 		if proc == 1 and get_node("/root/Main").bonusOn == false :
+			get_node("/root/Main").pause_shooting()
 			get_node("/root/Main").imuneBonus = true
 			get_node("/root/Main").bonusOn = true
 			get_node("/root/Main").add_child(imuneActivated_scn.instance())
@@ -21,6 +22,7 @@ func _on_fruit_area_entered(area):
 			for i in range(get_node("/root/Main").ducksInField) :
 				get_node("/root/Main/background").get_child(1).get_child(1).get_child(i).imuneOn = false
 		if proc == 2 and get_node("/root/Main").bonusOn == false :
+			get_node("/root/Main").pause_shooting()
 			get_node("/root/Main").bullets = 4
 			get_node("/root/Main").gunOn = true
 			get_node("/root/Main").bonusOn = true
@@ -28,6 +30,7 @@ func _on_fruit_area_entered(area):
 			get_node("/root/Main").add_child(gunActivated_scn.instance())
 			get_node("/root/Main/gun activated/GUN/animation").play("gun activated")
 		if proc == 3 and get_node("/root/Main").bonusOn == false and get_node("/root/Main").slowBonus == false:
+			get_node("/root/Main").pause_shooting()
 			get_node("/root/Main").bonusOn = true
 			get_node("/root/Main").slowBonus = true
 			get_node("/root/Main/Buttons/slowDucks").activate()
@@ -43,4 +46,4 @@ func _on_fruit_area_entered(area):
 		get_node("/root/Main").money = game.save["money"]
 		get_node("/root/Main/ui_container/money").set_text( str(get_node("/root/Main").money))
 		get_parent().queue_free()
-	pass # Replace with function body.
+	pass
