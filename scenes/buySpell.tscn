@@ -143,7 +143,6 @@ position = Vector2( 286.262, -249.58 )
 scale = Vector2( 1.8, 1.5 )
 z_index = -2
 texture = ExtResource( 5 )
-
 [connection signal="pressed" from="buySlow" to="." method="_on_buySlow_pressed"]
 [connection signal="pressed" from="buyLazer" to="." method="_on_buyLazer_pressed"]
 [connection signal="pressed" from="buyImune" to="." method="_on_buyImune_pressed"]

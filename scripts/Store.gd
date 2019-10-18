@@ -1,5 +1,5 @@
 extends Node2D
-onready var scn_buySpell = preload("res://scenes/buySpell.tscn")
+const scn_buySpell = preload("res://scenes/buyKnives.tscn")#preload("res://scenes/buySpell.tscn")
 onready var scn_buyknives = preload("res://scenes/buyKnives.tscn")
 var storePage= "spells"
 
