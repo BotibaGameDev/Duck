@@ -10,9 +10,6 @@ func _process(delta):
 
 func _on_Area2D_area_entered(area):
 	if area.get_name() == "movingKnife" and get_node("/root/Main").imuneBonus == false:
-		get_node("/root/Main/Buttons/imuneDuck").get_child(0).play("goAway")
-		get_node("/root/Main/Buttons/addLazer").get_child(0).play("goAway")
-		get_node("/root/Main/Buttons/slowDucks").get_child(0).play("goAway")
 		get_node("/root/Main/background/Swamp/Fading").play("Fade")
 		get_node("/root/Main/background").get_child(1).get_child(0).get_child(0).delete()
 		#get_parent().emitSignal()#ducksignal.

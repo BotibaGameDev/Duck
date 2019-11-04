@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/gameStage.gd" type="Script" id=1]
 [ext_resource path="res://scenes/background.tscn" type="PackedScene" id=2]
@@ -7,16 +7,12 @@
 [ext_resource path="res://sprites/SlowwButton.png" type="Texture" id=5]
 [ext_resource path="res://scripts/slowDucks.gd" type="Script" id=6]
 [ext_resource path="res://fonts/moon_get-Heavy.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://sprites/Lazer.png" type="Texture" id=8]
-[ext_resource path="res://scripts/addLazer.gd" type="Script" id=9]
-[ext_resource path="res://sprites/imuneButton.png" type="Texture" id=10]
-[ext_resource path="res://scripts/imuneDuck.gd" type="Script" id=11]
-[ext_resource path="res://sounds/whoosh3.wav" type="AudioStream" id=12]
-[ext_resource path="res://sounds/background ambiance.ogg" type="AudioStream" id=13]
-[ext_resource path="res://sounds/apple slash.wav" type="AudioStream" id=14]
-[ext_resource path="res://sounds/bossHit.wav" type="AudioStream" id=15]
-[ext_resource path="res://sounds/boosSplash.wav" type="AudioStream" id=16]
-[ext_resource path="res://sounds/Mac quack.wav" type="AudioStream" id=17]
+[ext_resource path="res://sounds/whoosh3.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/background ambiance.ogg" type="AudioStream" id=9]
+[ext_resource path="res://sounds/apple slash.wav" type="AudioStream" id=10]
+[ext_resource path="res://sounds/bossHit.wav" type="AudioStream" id=11]
+[ext_resource path="res://sounds/boosSplash.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/Mac quack.wav" type="AudioStream" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade"
@@ -123,104 +119,6 @@ tracks/0/keys = {
 size = 40
 font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=10]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 33, 260 ), Vector2( 30, 230 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 33, 234 ), Vector2( 33, 260 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.044, 0.044 ), Vector2( 0.042, 0.042 ), Vector2( 0.044, 0.044 ) ]
-}
-
-[sub_resource type="DynamicFont" id=13]
-size = 180
-font_data = ExtResource( 7 )
-
-[sub_resource type="Animation" id=14]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 54, 260 ), Vector2( 54, 230 ) ]
-}
-
-[sub_resource type="Animation" id=15]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 54, 232 ), Vector2( 54, 260 ) ]
-}
-
-[sub_resource type="Animation" id=16]
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.19, 0.19 ), Vector2( 0.2, 0.2 ) ]
-}
-
-[sub_resource type="DynamicFont" id=17]
-size = 40
-font_data = ExtResource( 7 )
-
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 
@@ -232,7 +130,7 @@ modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
 editor/display_folded = true
 scale = Vector2( 0.199901, 0.199901 )
 z_index = -4
-frame = 132
+frame = 139
 
 [node name="Fading" type="AnimationPlayer" parent="background/Swamp"]
 anims/Fade = SubResource( 1 )
@@ -279,6 +177,7 @@ texture = ExtResource( 4 )
 z_index = 2
 
 [node name="slowDucks" type="Button" parent="Buttons"]
+editor/display_folded = true
 margin_left = 11.0
 margin_top = 260.0
 margin_right = 126.0
@@ -308,80 +207,26 @@ margin_bottom = 74.5519
 custom_fonts/font = SubResource( 9 )
 text = "50"
 
-[node name="addLazer" type="Button" parent="Buttons"]
-editor/display_folded = true
-margin_left = 33.0
-margin_top = 260.0
-margin_right = 490.0
-margin_bottom = 731.0
-rect_scale = Vector2( 0.044, 0.044 )
-focus_mode = 0
-action_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 8 )
-flat = true
-script = ExtResource( 9 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/addLazer"]
-anims/come = SubResource( 10 )
-anims/goAway = SubResource( 11 )
-anims/pressed = SubResource( 12 )
-
-[node name="Label" type="Label" parent="Buttons/addLazer"]
-margin_left = -26.0059
-margin_top = -100.03
-margin_right = 259.994
-margin_bottom = 215.97
-custom_fonts/font = SubResource( 13 )
-text = "50"
-
-[node name="imuneDuck" type="Button" parent="Buttons"]
-editor/display_folded = true
-margin_left = 54.0
-margin_top = 260.0
-margin_right = 169.0
-margin_bottom = 371.0
-rect_scale = Vector2( 0.2, 0.2 )
-focus_mode = 0
-action_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 10 )
-flat = true
-script = ExtResource( 11 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/imuneDuck"]
-anims/come = SubResource( 14 )
-anims/goAway = SubResource( 15 )
-anims/pressed = SubResource( 16 )
-
-[node name="Label" type="Label" parent="Buttons/imuneDuck"]
-margin_left = -4.91321
-margin_top = -19.2177
-margin_right = 59.0868
-margin_bottom = 50.7823
-custom_fonts/font = SubResource( 17 )
-text = "50"
-
 [node name="sounds" type="Node" parent="."]
 editor/display_folded = true
 
 [node name="movingKnife" type="AudioStreamPlayer" parent="sounds"]
-stream = ExtResource( 12 )
+stream = ExtResource( 8 )
 
 [node name="background" type="AudioStreamPlayer" parent="sounds"]
-stream = ExtResource( 13 )
+stream = ExtResource( 9 )
 
 [node name="appleSlash" type="AudioStreamPlayer" parent="sounds"]
-stream = ExtResource( 14 )
+stream = ExtResource( 10 )
 
 [node name="bossHit" type="AudioStreamPlayer" parent="sounds"]
-stream = ExtResource( 15 )
+stream = ExtResource( 11 )
 
 [node name="bossSplash" type="AudioStreamPlayer" parent="sounds"]
-stream = ExtResource( 16 )
+stream = ExtResource( 12 )
 
 [node name="Quack" type="AudioStreamPlayer" parent="sounds"]
-stream = ExtResource( 17 )
+stream = ExtResource( 13 )
 
 [node name="betweenLvls" type="Timer" parent="."]
 wait_time = 1.5
@@ -392,7 +237,5 @@ wait_time = 1.5
 one_shot = true
 [connection signal="pressed" from="Buttons/slowDucks" to="Buttons/slowDucks" method="_on_slowDucks_pressed"]
 [connection signal="timeout" from="Buttons/slowDucks/Timer" to="Buttons/slowDucks" method="_on_Timer_timeout"]
-[connection signal="pressed" from="Buttons/addLazer" to="Buttons/addLazer" method="_on_addLazer_pressed"]
-[connection signal="pressed" from="Buttons/imuneDuck" to="Buttons/imuneDuck" method="_on_imuneDuck_pressed"]
 [connection signal="timeout" from="betweenLvls" to="." method="_on_betweenLvls_timeout"]
 [connection signal="timeout" from="pause shooting" to="." method="_on_pause_shooting_timeout"]

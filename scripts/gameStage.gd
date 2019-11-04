@@ -156,3 +156,7 @@ func _on_betweenLvls_timeout():
 func _on_pause_shooting_timeout():
 	canshoot = true
 	pass 
+# skins ------------------------------------------------------------
+onready var skin0 = preload("res://scenes/knives skins/skin0.tscn")
+onready var skin1 = preload("res://scenes/knives skins/skin1.tscn")
+onready var skin = skin0

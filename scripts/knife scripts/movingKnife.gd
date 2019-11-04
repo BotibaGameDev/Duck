@@ -1,9 +1,11 @@
 extends RigidBody2D
-
+onready var skin = get_node("/root/Main").skin
 var pos = 1
 var knifeSpeed = -500
 
 func _ready():
+	get_child(0).queue_free()
+	add_child(skin.instance())
 	if get_node("/root/Main").gunOn == true :
 		get_node("/root/Main/gun activated").get_child(get_node("/root/Main").bullets).queue_free()
 		get_node("/root/Main").bullets -=1

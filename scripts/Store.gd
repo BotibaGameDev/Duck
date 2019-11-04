@@ -1,10 +1,10 @@
 extends Node2D
 const scn_buySpell = preload("res://scenes/buyKnives.tscn")#preload("res://scenes/buySpell.tscn")
 onready var scn_buyknives = preload("res://scenes/buyKnives.tscn")
-var storePage= "spells"
+var storePage= "knives"
 
 func _ready():
-	get_child(0).play("come")
+	get_node("animation").play("come")
 	pass 
 
 func _process(delta):
@@ -12,7 +12,7 @@ func _process(delta):
 
 func _on_exit_pressed():
 	get_node("/root/Main/Menu").storeOpen = false
-	get_child(0).play("goAway")
+	get_node("animation").play("goAway")
 	get_node("/root/Main/Menu").get_child(0).play("come")
 	$"/root/Main/Menu/Timer".start()
 	pass # Replace with function body.
@@ -21,7 +21,7 @@ func _on_exit_pressed():
 func _on_knives_pressed():
 	get_child(0).play("knivesPressed")
 	if storePage == "spells":
-		get_node("buySpell").queue_free()
+		#get_node("buySpell").queue_free()
 		add_child(scn_buyknives.instance())
 		pass
 	storePage="knives"
@@ -32,7 +32,7 @@ func _on_spells_pressed():
 	get_child(0).play("spellsPressed")
 	if storePage == "knives":
 		get_node("buyKnives").queue_free()
-		add_child(scn_buySpell.instance())
+		#add_child(scn_buySpell.instance())
 		pass
 	storePage="spells"
 	pass # Replace with function body.

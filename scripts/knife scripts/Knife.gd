@@ -1,8 +1,11 @@
 extends RigidBody2D
 onready var scn_lazer =preload("res://scenes/lazer.tscn")
+onready var skin = get_node("/root/Main").skin
 var onetime = true
 
 func _ready():
+	get_child(0).queue_free()
+	add_child(skin.instance())
 	#set_linear_velocity(Vector2(get_linear_velocity().x,-250))
 	pass 
 
