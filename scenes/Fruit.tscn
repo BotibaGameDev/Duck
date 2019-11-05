@@ -9,6 +9,8 @@ radius = 8.5012
 
 [node name="Fruit" type="RigidBody2D"]
 position = Vector2( 40.027, 23.1741 )
+z_index = 1
+z_as_relative = false
 gravity_scale = 0.0
 script = ExtResource( 1 )
 

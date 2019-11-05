@@ -67,7 +67,7 @@ position = Vector2( 0.122414, 1.12447 )
 scale = Vector2( 0.06, 0.06 )
 z_index = -1
 frames = SubResource( 2 )
-frame = 22
+frame = 11
 playing = true
 
 [node name="movingKnife" type="Area2D" parent="."]
